@@ -27,7 +27,7 @@ describe("Employee tests without static methods", () => {
 
 describe("Manager tests", () => {
     const preston = new Employee("Preston", "Engineer", 100000);
-    const jenna = new Manager("Jenna", "Head of Engineers", 120000, "Software Engineering", 10);
+    const jenna = new Manager("Jenna", "Head of Engineers", 120000, "Software Engineering");
 
     test("Can create instance of Manager that is a subclass of Employee", () => {
         expect(jenna instanceof Manager).toBe(true);
@@ -39,7 +39,7 @@ describe("Manager tests", () => {
     })
 
     test("Can update a Managers department", () => {
-        jenna.setEmployeesManaged(preston);
+        jenna.addEmployeeManaged(preston);
         expect(jenna.getEmployeesManaged()).toEqual([preston]);
     })
 })
@@ -57,7 +57,7 @@ describe("Software Engineer Tests", () => {
     })
 
     test("Can update programmingLanguages", () => {
-        programmer.setProgrammingLanguages("C#"); 
+        programmer.setProgrammingLanguage("C#"); 
         expect(programmer.getProgrammingLanguages()).toEqual (["JavaScript", "Java", "Python", "C#"]);
     })
 })
@@ -71,22 +71,22 @@ describe("SalesPerson Tests", () => {
     })
 
     test("Can get totalSales with getSalesNumber", () => {
-        expect(malik.getSalesNumber()).toBe(0);
+        expect(malik.getSalesNumbers()).toBe(0);
     })
 
     test("Can update totalSales with makeSale", () => {
         malik.makeSale(10500);
         malik.makeSale(20000);
-        expect(malik.getSalesNumber()).toBe(30500);
+        expect(malik.getSalesNumbers()).toBe(30500);
     })
 })
 
 describe("Employee Static Properties and Methods Tests", () => {
     test("getEmployees returns array of all employees", () => {
-        expect(Employees.getEmployees().length).toBe(5)
+        expect(Employee.getEmployees().length).toBe(5)
     })
 
     test("getTotalPayroll returns salary of all employees created", () => {
-        expect(Employees.getTotalPayroll()).toBe(515000)
+        expect(Employee.getTotalPayroll()).toBe(515000)
     })
 })
