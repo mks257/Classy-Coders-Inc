@@ -10,7 +10,7 @@ class Employee {
         this.#isHired = true;
         Employee.#allEmployees.push(this);
     }
-
+ // to get salary
     getSalary() {
         return this.#salary;
     }
@@ -52,4 +52,3 @@ class Employee {
 module.exports = {
     Employee,
 };
-git 
