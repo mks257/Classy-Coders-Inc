@@ -1,6 +1,6 @@
 // softwareEngineer.js
 
-const { Employee } = require('./employee');
+const { Employee } = require('./Employee');
 
 class SoftwareEngineer extends Employee {
     #programmingLanguages;
@@ -9,7 +9,7 @@ class SoftwareEngineer extends Employee {
         super(name, position, salary);
         this.#programmingLanguages = programmingLanguages || [];
     }
-
+// getter and setter for programmong Languages
     getProgrammingLanguages() {
         return this.#programmingLanguages;
     }

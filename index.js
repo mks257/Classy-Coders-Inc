@@ -1,3 +1,4 @@
+//calling functions
 const { Employee } = require("./classes/Employee")
 const { Manager } = require("./classes/Manager")
 const { SalesPerson } = require("./classes/SalesPerson")
